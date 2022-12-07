@@ -12,6 +12,7 @@ public:
 
 	}
 };
+
 Meadow::Application* Meadow::CreateApplication() {
 	return new Sandbox();
 }
