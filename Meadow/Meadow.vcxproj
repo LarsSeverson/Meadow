@@ -14,6 +14,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Meadow.h" />
+    <ClInclude Include="src\Meadow\Application.h" />
+    <ClInclude Include="src\Meadow\Core.h" />
+    <ClInclude Include="src\Meadow\EntryPoint.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Meadow\Application.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{02D1D6C2-EE72-0199-D72D-15EDC36E88E9}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>

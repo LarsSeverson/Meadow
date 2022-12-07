@@ -1,8 +1,17 @@
 #pragma once
-namespace Meadow {
-	_declspec(dllimport) void Print();
-}
 
-int main() {
-	Meadow::Print();
+#include <Meadow.h>
+
+class Sandbox : public Meadow::Application
+{
+public:
+	Sandbox() {
+
+	}
+	~Sandbox() {
+
+	}
+};
+Meadow::Application* Meadow::CreateApplication() {
+	return new Sandbox();
 }
