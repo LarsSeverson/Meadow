@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core.h"
+#include "Meadow/Events/ApplicationEvent.h"
 
 namespace Meadow {
 	class MEADOW_API Application

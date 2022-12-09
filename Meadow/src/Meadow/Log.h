@@ -2,6 +2,9 @@
 
 #include "Core.h"
 #include "spdlog/spdlog.h"
+// To make able to VA ARGS an object
+#include "spdlog/fmt/ostr.h"
+
 #include <memory>
 
 namespace Meadow {

@@ -27,8 +27,10 @@ project "Meadow"
 
     includedirs
     {
-        "vendor/spdlog/include"
+        "%{prj.name}/src",
+        "%{prj.name}/vendor/spdlog/include"
     }
+
 
     filter "system:windows"
         cppdialect "C++20"
@@ -75,7 +77,7 @@ project "Sandbox"
         includedirs
         {
             "Meadow/src",
-            "vendor/spdlog/include"
+            "Meadow/vendor/spdlog/include"
         }
 
         links

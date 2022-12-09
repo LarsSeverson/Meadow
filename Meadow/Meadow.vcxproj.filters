@@ -1,42 +1,46 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Meadow">
+      <UniqueIdentifier>{02D1D6C2-EE72-0199-D72D-15EDC36E88E9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Meadow\New folder">
+      <UniqueIdentifier>{B74C74B6-2363-724C-6CDA-FD6DD82F43D4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Meadow\Core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="src\Meadow.h" />
     <ClInclude Include="src\Meadow\Application.h">
-      <Filter>Header Files</Filter>
+      <Filter>Meadow</Filter>
     </ClInclude>
-    <ClInclude Include="src\Meadow.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Meadow\Core.h">
+      <Filter>Meadow</Filter>
     </ClInclude>
     <ClInclude Include="src\Meadow\EntryPoint.h">
-      <Filter>Header Files</Filter>
+      <Filter>Meadow</Filter>
     </ClInclude>
     <ClInclude Include="src\Meadow\Log.h">
-      <Filter>Header Files</Filter>
+      <Filter>Meadow</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Meadow\Events\ApplicationEvent.h">
+      <Filter>Meadow\New folder</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Meadow\Events\Event.h">
+      <Filter>Meadow\New folder</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Meadow\Events\KeyEvent.h">
+      <Filter>Meadow\New folder</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Meadow\Events\MouseEvent.h">
+      <Filter>Meadow\New folder</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Meadow\Application.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Meadow</Filter>
     </ClCompile>
     <ClCompile Include="src\Meadow\Log.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Meadow</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
