@@ -5,8 +5,6 @@
 // To make able to VA ARGS an object
 #include "spdlog/fmt/ostr.h"
 
-#include <memory>
-
 namespace Meadow {
 	class MEADOW_API Log
 	{

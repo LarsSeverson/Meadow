@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Meadow {
 	class MEADOW_API WindowResizeEvent : public Event
 	{

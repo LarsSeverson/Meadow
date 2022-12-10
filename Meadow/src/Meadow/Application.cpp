@@ -1,3 +1,4 @@
+#include "mdpch.h"
 #include "Application.h"
 #include "Log.h"
 namespace Meadow {
@@ -8,10 +9,8 @@ namespace Meadow {
 
 	}
 	void Application::Run() {
-		WindowResizeEvent e(1200, 3);
-		if (e.isInCategory(Meadow::EventCategoryApplication)) {
-			MD_TRACE(e);
-		}
+		KeyReleasedEvent e(10);
+		MD_TRACE(e);
 		while (true) {
 
 		}

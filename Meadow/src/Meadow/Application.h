@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Meadow/Events/ApplicationEvent.h"
+#include "Meadow/Events/KeyEvent.h"
 
 namespace Meadow {
 	class MEADOW_API Application

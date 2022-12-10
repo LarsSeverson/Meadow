@@ -1,9 +1,6 @@
 #pragma once
-
+#include "mdpch.h"
 #include "Meadow/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Meadow {
 

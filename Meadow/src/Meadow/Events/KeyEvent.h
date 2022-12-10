@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Meadow {
 	class MEADOW_API KeyEvent : public Event
 	{
@@ -28,7 +26,7 @@ namespace Meadow {
 			// cout
 			std::stringstream ss;
 
-			ss << "KeyPressedEvent: " << mKeyCode << " (" << mReapeatCount << " repeats";
+			ss << "KeyPressedEvent: " << mKeyCode << " (" << mReapeatCount << " repeats)";
 			return ss.str();
 		}
 		EVENT_CLASS_TYPE(KeyPressed)

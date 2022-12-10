@@ -19,6 +19,9 @@ project "Meadow"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir    ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "mdpch.h"
+    pchsource "Meadow/src/mdpch.cpp"
+
     files
     {
         "%{prj.name}/src/**.h",

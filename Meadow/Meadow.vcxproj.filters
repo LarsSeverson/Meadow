@@ -4,8 +4,8 @@
     <Filter Include="Meadow">
       <UniqueIdentifier>{02D1D6C2-EE72-0199-D72D-15EDC36E88E9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Meadow\New folder">
-      <UniqueIdentifier>{B74C74B6-2363-724C-6CDA-FD6DD82F43D4}</UniqueIdentifier>
+    <Filter Include="Meadow\Events">
+      <UniqueIdentifier>{A606DBD8-12C7-560F-DB01-A08C47819BEB}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -19,21 +19,22 @@
     <ClInclude Include="src\Meadow\EntryPoint.h">
       <Filter>Meadow</Filter>
     </ClInclude>
+    <ClInclude Include="src\Meadow\Events\ApplicationEvent.h">
+      <Filter>Meadow\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Meadow\Events\Event.h">
+      <Filter>Meadow\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Meadow\Events\KeyEvent.h">
+      <Filter>Meadow\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Meadow\Events\MouseEvent.h">
+      <Filter>Meadow\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Meadow\Log.h">
       <Filter>Meadow</Filter>
     </ClInclude>
-    <ClInclude Include="src\Meadow\Events\ApplicationEvent.h">
-      <Filter>Meadow\New folder</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Meadow\Events\Event.h">
-      <Filter>Meadow\New folder</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Meadow\Events\KeyEvent.h">
-      <Filter>Meadow\New folder</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Meadow\Events\MouseEvent.h">
-      <Filter>Meadow\New folder</Filter>
-    </ClInclude>
+    <ClInclude Include="src\mdpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Meadow\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\Meadow\Log.cpp">
       <Filter>Meadow</Filter>
     </ClCompile>
+    <ClCompile Include="src\mdpch.cpp" />
   </ItemGroup>
 </Project>
