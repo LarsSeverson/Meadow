@@ -11,6 +11,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Meadow/Log.h"
+
 #ifdef MD_PLATFORM_WINDOWS
 #include <Windows.h>
 #endif

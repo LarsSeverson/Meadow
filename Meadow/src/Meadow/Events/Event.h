@@ -25,7 +25,7 @@ namespace Meadow {
 
 //-------------------------------------------MACROS-------------------------------------------------------
 	// These macros define the functions declared in Event
-	// *It's important to note these macros are not called when Event.h is compiled.
+	// It's important to note these macros are not called when Event.h is compiled.
 	// They are called in the child classes of class Event, and the pure virtual functions:
 	// getStaticType(), getEventType(), getName(), and getCategoryFlags() are defined at call time.
 #define EVENT_CLASS_TYPE(type) static EventType getStaticType() { return EventType::##type;}\

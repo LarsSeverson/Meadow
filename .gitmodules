@@ -1,3 +1,6 @@
 [submodule "Meadow/vendor/spdlog"]
 	path = Meadow/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Meadow/vendor/GLFW"]
+	path = Meadow/vendor/GLFW
+	url = https://github.com/TheCherno/GLFW
