@@ -17,7 +17,8 @@ namespace Meadow {
 		inline unsigned int getWidth() const override { return mData.windowWidth; }
 		inline unsigned int getHeight() const override { return mData.windowHeight; }
 		
-		inline void setEventCallBack(const EventCallBackFn& callback) override { mData.EventCallback = callback; }
+		// Now refer back to Window.h
+		inline void setEventCallback(const EventCallbackFn& callback) override { mData.EventCallback = callback; }
 		void setVSync(bool enabled) override;
 		bool isVSync() const override;
 	private:
@@ -32,7 +33,7 @@ namespace Meadow {
 			unsigned int windowWidth, windowHeight;
 			bool vSync;
 
-			EventCallBackFn EventCallback;
+			EventCallbackFn EventCallback;
 		};
 
 		WindowData mData;

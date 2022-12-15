@@ -18,7 +18,7 @@ namespace Meadow {
 	// Abstract class / interface
 	class MEADOW_API Window {
 	public:
-		using EventCallBackFn = std::function<void(Event&)>;
+		using EventCallbackFn = std::function<void(Event&)>;
 
 		virtual ~Window() {}
 
@@ -28,7 +28,8 @@ namespace Meadow {
 		virtual unsigned int getHeight() const = 0;
 
 		// Window attributes
-		virtual void setEventCallBack(const EventCallBackFn& theEvent) = 0;
+			// Check bind in Application.cpp 
+		virtual void setEventCallback(const EventCallbackFn& theEvent) = 0;
 		virtual void setVSync(bool enabled) = 0;
 		virtual bool isVSync() const = 0;
 									// defined here / Create() call would work

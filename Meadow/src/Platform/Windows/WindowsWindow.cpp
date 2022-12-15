@@ -65,6 +65,8 @@ namespace Meadow {
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
 			WindowCloseEvent event;
+
+			// See setEventCallback() in WindowsWindow.h
 			data.EventCallback(event);
 		});
 
@@ -123,7 +125,6 @@ namespace Meadow {
 			
 			MouseMovedEvent event((float)xPos, (float)yPos);
 			data.EventCallback(event);
-			
 		});
 	}
 

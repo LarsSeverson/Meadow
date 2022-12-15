@@ -8,13 +8,14 @@
 
 namespace Meadow {
 
+// Every time there is an event in GLFW (setters defined) the onEvent() function is called
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
 	Application::Application() {
 		appWindow = std::unique_ptr<Window>(Window::Create());
 
 		// Setting WindowsWindow EventCallback = the function onEvent
-		appWindow->setEventCallBack(BIND_EVENT_FN(onEvent));
+		appWindow->setEventCallback(BIND_EVENT_FN(onEvent));
 	}
 
 	Application::~Application() {

@@ -61,9 +61,7 @@ namespace Meadow {
 		template<typename T>
 		bool dispatch(EventFn<T> func) {
 			if (mEvent.getEventType() == T::getStaticType()) {
-				// mEvent.m_Handled = func(*(T*)&m_Event);
-				// mEvent.m_Handled = func(static_cast<T&>(mEvent));
-				mEvent.mHandled = true;
+				mEvent.mHandled = func(static_cast<T&>(mEvent));
 				return true;
 			}
 			return false;
