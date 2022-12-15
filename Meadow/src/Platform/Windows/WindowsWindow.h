@@ -17,14 +17,14 @@ namespace Meadow {
 		inline unsigned int getWidth() const override { return mData.windowWidth; }
 		inline unsigned int getHeight() const override { return mData.windowHeight; }
 		
-		inline void setEventCallBack(const EventCallBackFn& callback) override { mData.EventCallBack = callback; }
+		inline void setEventCallBack(const EventCallBackFn& callback) override { mData.EventCallback = callback; }
 		void setVSync(bool enabled) override;
 		bool isVSync() const override;
 	private:
 		virtual void init(const WindowProperties& props);
 		virtual void shutDown();
 
-		GLFWwindow* theWindow;
+		GLFWwindow* glfwWindow;
 
 		struct WindowData {
 			std::string windowTitle;
@@ -32,7 +32,7 @@ namespace Meadow {
 			unsigned int windowWidth, windowHeight;
 			bool vSync;
 
-			EventCallBackFn EventCallBack;
+			EventCallBackFn EventCallback;
 		};
 
 		WindowData mData;

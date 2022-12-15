@@ -7,8 +7,6 @@ extern Meadow::Application* Meadow::CreateApplication();
 
 int main(int argc, char** argv) {
 	Meadow::Log::Init();
-	MD_CORE_WARN("Core log test");
-	MD_WARN("APP log test");
 	auto app = Meadow::CreateApplication();
 	app->Run();
 	delete app;

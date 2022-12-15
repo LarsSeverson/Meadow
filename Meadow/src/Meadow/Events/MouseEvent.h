@@ -77,6 +77,7 @@ namespace Meadow {
 	// Released
 	class MEADOW_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{	
+	public:
 		MouseButtonReleasedEvent(int button) : MouseButtonEvent(button) {}
 
 		std::string toString() const override {
