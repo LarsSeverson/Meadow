@@ -35,7 +35,7 @@ namespace Meadow {
 		if (!GLFWInit) {
 
 			int success = glfwInit();
-			MD_CORE_ASSERT(success, "Could not initalize GLFW!");
+			MD_CORE_ASSERT(success, "Could not initialize GLFW!");
 
 			GLFWInit = true;
 		}

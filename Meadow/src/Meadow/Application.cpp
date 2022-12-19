@@ -8,7 +8,6 @@
 
 namespace Meadow {
 
-// Every time there is an event in GLFW (setters defined) the onEvent() function is called
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
 	Application::Application() {
@@ -22,9 +21,14 @@ namespace Meadow {
 
 	}
 
+	// Every time there is an Event this function is called 
 	void Application::onEvent(Event& e) {
+
+		// (EventDispatcher::mEvent = e)
 		EventDispatcher dispatcher(e);
-		dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FN(onWindowClose));
+
+		// dispatch(func = onWindowClose, T = WindowCloseEvent) -> takes in the function and also the functions type
+		dispatcher.dispatch<WindowCloseEvent>([this](WindowCloseEvent& event) -> bool { return onWindowClose(std::forward<decltype(event)>(event)); });
 
 		MD_CORE_TRACE("{0}", e);
 	}

@@ -16,13 +16,13 @@ namespace Meadow {
 		void Run();
 
 		void onEvent(Event& e);
+
 	private:
 		bool onWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> appWindow;
 		bool isRunning = true;
 	};
-
 	Application* CreateApplication();
 	// Defined in sandbox / client
 }
