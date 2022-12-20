@@ -37,6 +37,12 @@
     <ClInclude Include="src\Meadow\Events\MouseEvent.h">
       <Filter>Meadow\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Meadow\Layer.h">
+      <Filter>Meadow</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Meadow\LayerStack.h">
+      <Filter>Meadow</Filter>
+    </ClInclude>
     <ClInclude Include="src\Meadow\Log.h">
       <Filter>Meadow</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Meadow\Application.cpp">
+      <Filter>Meadow</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Meadow\Layer.cpp">
+      <Filter>Meadow</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Meadow\LayerStack.cpp">
       <Filter>Meadow</Filter>
     </ClCompile>
     <ClCompile Include="src\Meadow\Log.cpp">

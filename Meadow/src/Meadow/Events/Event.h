@@ -38,6 +38,8 @@ namespace Meadow {
 	{
 		friend class EventDispatcher;
 	public:
+
+		bool EventHandled = false;
 		virtual EventType getEventType() const = 0;
 		virtual const char* getName()	 const = 0; // char* is necessary for toString()
 		virtual int getCategoryFlags()	 const = 0;
@@ -47,9 +49,6 @@ namespace Meadow {
 			// bit
 			return getCategoryFlags() & category;
 		}
-	protected:
-		bool mHandled = false;
-
 	};
 	class EventDispatcher
 	{
@@ -65,7 +64,7 @@ namespace Meadow {
 			if (mEvent.getEventType() == T::getStaticType()) {
 
 				// Cast that function with the parameter of mEvent<T&> e.g. func = WindowCloseEvent -> mEvent = Event -> WindowCloseEvent(*(WindowCloseEvent*)(&Event))
-				mEvent.mHandled = func(static_cast<T&>(mEvent));
+				mEvent.EventHandled = func(static_cast<T&>(mEvent));
 				return true;
 			}
 			return false;

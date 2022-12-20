@@ -21,18 +21,32 @@ namespace Meadow {
 
 	}
 
+
+	void Application::pushLayer(Layer* layer) {
+		appLayerStack.pushLayer(layer);
+	}
+
+	void Application::pushOverlay(Layer* layer) {
+		appLayerStack.pushOverlay(layer);
+	}
+
 	// Every time there is an Event this function is called 
 	void Application::onEvent(Event& e) {
 
 		// (EventDispatcher::mEvent = e)
 		EventDispatcher dispatcher(e);
-
 		// dispatch(func = onWindowClose, T = WindowCloseEvent) -> takes in the function and also the functions type
 		dispatcher.dispatch<WindowCloseEvent>([this](WindowCloseEvent& event) -> bool { return onWindowClose(std::forward<decltype(event)>(event)); });
 
-		MD_CORE_TRACE("{0}", e);
+		// Will continuously look for events happening in the layer stack
+		for (auto it = appLayerStack.end(); it != appLayerStack.begin();) {
+			// Not the last layer in the stack -> increment down and check events
+			(*--it)->onEvent(e); // Layer*->
+			if (e.EventHandled) {
+				break;
+			}
+		}
 	}
-
 	bool Application::onWindowClose(WindowCloseEvent& e) {
 		isRunning = false;
 		return true;
@@ -42,6 +56,11 @@ namespace Meadow {
 		while (isRunning) {
 			glClearColor(1, 1, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			for (Layer* layer : appLayerStack) {
+				layer->onUpdate();
+			}
+
 			appWindow->onUpdate();
 		}
 	}

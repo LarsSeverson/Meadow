@@ -63,14 +63,17 @@ project "Meadow"
 
     filter "configurations:Debug"
         defines "MD_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "MD_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "MD_DIST"
+        buildoptions "/MD"
         optimize "On"
 
 project "Sandbox"
@@ -110,13 +113,16 @@ project "Sandbox"
     
         filter "configurations:Debug"
             defines "MD_DEBUG"
+            buildoptions "/MDd"
             symbols "On"
     
         filter "configurations:Release"
             defines "MD_RELEASE"
+            buildoptions "/MD"
             optimize "On"
     
         filter "configurations:Dist"
             defines "MD_DIST"
+            buildoptions "/MD"
             optimize "On"
     

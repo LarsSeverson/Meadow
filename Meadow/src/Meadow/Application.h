@@ -1,12 +1,13 @@
 #pragma once
 
 #include "Core.h"
+#include "Window.h"
+#include "LayerStack.h"
 #include "Events/Event.h"
 #include "Meadow/Events/ApplicationEvent.h"
 
-#include "Window.h"
-
 namespace Meadow {
+
 	class MEADOW_API Application
 	{
 	public:
@@ -17,12 +18,18 @@ namespace Meadow {
 
 		void onEvent(Event& e);
 
+		void pushLayer(Layer* layer);
+		void pushOverlay(Layer* layer);
 	private:
 		bool onWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> appWindow;
+
+		LayerStack appLayerStack;
+
 		bool isRunning = true;
 	};
+
 	Application* CreateApplication();
 	// Defined in sandbox / client
 }

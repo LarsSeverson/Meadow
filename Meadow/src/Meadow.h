@@ -4,6 +4,7 @@
 // For use by Meadow applications
 
 #include "Meadow/Application.h"
+#include "Meadow/Layer.h"
 #include "Meadow/Log.h"
 
 // ------Entry Point------
