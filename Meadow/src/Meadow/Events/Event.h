@@ -72,7 +72,7 @@ namespace Meadow {
 	private:
 		Event& mEvent;
 	};
-	inline std::ostream& operator<<(std::ostream& os, const Event& e) {
+	inline std::ostream& operator << (std::ostream& os, const Event& e) {
 		// For logging Events (is used in Log.h macros)
 		return os << e.toString();
 	}

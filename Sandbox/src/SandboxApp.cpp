@@ -21,7 +21,7 @@ class Sandbox : public Meadow::Application
 {
 public:
 	Sandbox() {
-		pushLayer(new ExampleLayer());
+		pushLayer(new ExampleLayer()); 
 	}
 	~Sandbox() {
 

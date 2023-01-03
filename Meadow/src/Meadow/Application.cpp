@@ -4,7 +4,7 @@
 #include "Meadow/Events/ApplicationEvent.h"
 #include "Meadow/Log.h"
 
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 namespace Meadow {
 
@@ -15,6 +15,9 @@ namespace Meadow {
 
 		// Setting WindowsWindow EventCallback = the function onEvent
 		appWindow->setEventCallback(BIND_EVENT_FN(onEvent));
+
+		unsigned int id;
+		glGenVertexArrays(1, &id);
 	}
 
 	Application::~Application() {

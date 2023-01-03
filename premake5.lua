@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Meadow/vendor/GLFW/include"
+IncludeDir["glad"] = "Meadow/vendor/glad/include"
 
 include "Meadow/vendor/GLFW"
+include "Meadow/vendor/glad"
 
 project "Meadow"
     location "Meadow"
@@ -37,11 +39,14 @@ project "Meadow"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.glad}"
     }
 
     links {
-        "GLFW", "opengl32.lib"
+        "GLFW", 
+        "glad",
+        "opengl32.lib"
     }
 
 
@@ -53,7 +58,8 @@ project "Meadow"
         defines
         {
             "MD_PLATFORM_WINDOWS",
-            "MD_BUILD_DLL"
+            "MD_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands

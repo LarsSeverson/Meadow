@@ -5,6 +5,8 @@
 #include "Meadow/Events/KeyEvent.h"
 #include "Meadow/Events/MouseEvent.h"
 
+#include <glad/glad.h>
+
 namespace Meadow {
 
 	static bool GLFWInit = false;
@@ -43,6 +45,8 @@ namespace Meadow {
 		// GLFW stuff
 		glfwWindow = glfwCreateWindow((int)props.windowWidth, (int)props.windowHeight, mData.windowTitle.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(glfwWindow);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		MD_CORE_ASSERT(status, "Failed to initialize Glad!");
 		glfwSetWindowUserPointer(glfwWindow, &mData);
 
 		setVSync(true);
