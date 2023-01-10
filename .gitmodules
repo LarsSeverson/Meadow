@@ -4,3 +4,6 @@
 [submodule "Meadow/vendor/GLFW"]
 	path = Meadow/vendor/GLFW
 	url = https://github.com/TheCherno/GLFW
+[submodule "Meadow/vendor/imgui"]
+	path = Meadow/vendor/imgui
+	url = https://github.com/thecherno/imgui

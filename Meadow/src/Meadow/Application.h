@@ -20,10 +20,15 @@ namespace Meadow {
 
 		void pushLayer(Layer* layer);
 		void pushOverlay(Layer* layer);
+
+		inline Window& getWindow() { return *appWindow; }
+
+		inline static Application& get() { return *sInstance; }
 	private:
 		bool onWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> appWindow;
+		static Application* sInstance;
 
 		LayerStack appLayerStack;
 

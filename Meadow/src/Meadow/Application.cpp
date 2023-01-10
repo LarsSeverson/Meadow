@@ -10,14 +10,16 @@ namespace Meadow {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
+	Application* Application::sInstance = nullptr;
+
 	Application::Application() {
+		MD_CORE_ASSERT(!sInstance, "Application instance already exists!");
+		sInstance = this;
+
 		appWindow = std::unique_ptr<Window>(Window::Create());
 
 		// Setting WindowsWindow EventCallback = the function onEvent
 		appWindow->setEventCallback(BIND_EVENT_FN(onEvent));
-
-		unsigned int id;
-		glGenVertexArrays(1, &id);
 	}
 
 	Application::~Application() {
@@ -27,10 +29,12 @@ namespace Meadow {
 
 	void Application::pushLayer(Layer* layer) {
 		appLayerStack.pushLayer(layer);
+		layer->onAttach();
 	}
 
 	void Application::pushOverlay(Layer* layer) {
 		appLayerStack.pushOverlay(layer);
+		layer->onAttach();
 	}
 
 	// Every time there is an Event this function is called 

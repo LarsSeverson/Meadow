@@ -22,6 +22,7 @@ class Sandbox : public Meadow::Application
 public:
 	Sandbox() {
 		pushLayer(new ExampleLayer()); 
+		pushOverlay(new Meadow::ImGuiLayer());
 	}
 	~Sandbox() {
 
