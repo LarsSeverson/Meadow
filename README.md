@@ -1,4 +1,7 @@
 # Meadow
+
+PROJECT UPDATE: Postponing project... sort of turned this project into https://github.com/LarsSeverson/LSAP-Audio-Synth
+
 Game engine
 
 
