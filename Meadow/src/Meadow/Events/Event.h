@@ -34,7 +34,9 @@ namespace Meadow {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int getCategoryFlags() const override {return category;}
 //-------------------------------------------MACROS-------------------------------------------------------
-	class MEADOW_API Event 
+	class 
+		
+		Event 
 	{
 		friend class EventDispatcher;
 	public:

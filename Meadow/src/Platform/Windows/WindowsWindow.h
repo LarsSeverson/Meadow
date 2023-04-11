@@ -6,7 +6,7 @@
 
 namespace Meadow {
 
-	class MEADOW_API WindowsWindow : public Window
+	class WindowsWindow : public Window
 	{
 	public:
 		WindowsWindow(const WindowProperties& props);

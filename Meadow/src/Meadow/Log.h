@@ -6,7 +6,9 @@
 #include "spdlog/fmt/ostr.h"
 
 namespace Meadow {
-	class MEADOW_API Log
+	class 
+		
+		Log
 	{
 	public:
 		static void Init();

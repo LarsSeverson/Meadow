@@ -3,7 +3,8 @@
 
 namespace Meadow {
 	//-------------------------Mouse Moved-------------------------
-	class MEADOW_API MouseMovedEvent : public Event
+	class 
+		MouseMovedEvent : public Event
 	{
 	public:
 		MouseMovedEvent(float x, float y) : mMouseX(x), mMouseY(y) {}
@@ -24,7 +25,7 @@ namespace Meadow {
 	};
 	//------------------------------------------------------------
 	//----------------------Mouse Scrolled------------------------
-	class MEADOW_API MouseScrolledEvent : public Event
+	class  MouseScrolledEvent : public Event
 	{
 	public:
 
@@ -48,7 +49,7 @@ namespace Meadow {
 	};
 	//------------------------------------------------------------
 	//--------------------Mouse Button Event----------------------
-	class MEADOW_API MouseButtonEvent : public Event
+	class  MouseButtonEvent : public Event
 	{
 	public:
 		inline int getMouseButton() { return mButton; }
@@ -60,7 +61,7 @@ namespace Meadow {
 	//------------------------------------------------------------
 	//--------------------Mouse Button Event----------------------
 	// Pressed
-	class MEADOW_API MouseButtonPressedEvent : public MouseButtonEvent
+	class  MouseButtonPressedEvent : public MouseButtonEvent
 	{	
 	public:
 		MouseButtonPressedEvent(int button) : MouseButtonEvent(button) {}
@@ -75,7 +76,7 @@ namespace Meadow {
 	//------------------------------------------------------------
 	//--------------------Mouse Button Event----------------------
 	// Released
-	class MEADOW_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class  MouseButtonReleasedEvent : public MouseButtonEvent
 	{	
 	public:
 		MouseButtonReleasedEvent(int button) : MouseButtonEvent(button) {}

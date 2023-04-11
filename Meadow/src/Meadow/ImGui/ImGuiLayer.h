@@ -4,7 +4,8 @@
 
 namespace Meadow {
 
-	class MEADOW_API ImGuiLayer : public Layer
+	class 
+		ImGuiLayer : public Layer
 	{
 	public:
 		ImGuiLayer();

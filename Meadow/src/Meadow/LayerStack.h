@@ -7,7 +7,7 @@
 
 namespace Meadow {
 
-	class MEADOW_API LayerStack
+	class  LayerStack
 	{
 	public:
 		LayerStack();

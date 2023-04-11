@@ -1,30 +1,30 @@
 #pragma once
 
 #include <Meadow.h>
+#include "Meadow/EntryPoint.h"
 
 class ExampleLayer : public Meadow::Layer
 {
 public:
-	ExampleLayer(const std::string& d) : Layer("Example"), hey(d) {}
+	ExampleLayer() : Layer("Example") {}
 
 	void onUpdate() override
 	{
-		MD_INFO("ExampleLayer::Update");
+
 	}
 
 	void onEvent(Meadow::Event& event) override {
-		MD_TRACE("{0}", event);
+
 	}
 private:
-	std::string hey;
+
 };
 
 class Sandbox : public Meadow::Application
 {
 public:
 	Sandbox() {
-		pushLayer(new ExampleLayer("gey"));
-		pushOverlay(new Meadow::ImGuiLayer());
+		pushLayer(new ExampleLayer());
 	}
 	~Sandbox() {
 

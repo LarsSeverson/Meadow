@@ -8,7 +8,7 @@
 
 namespace Meadow {
 
-	class MEADOW_API Application
+	class Application
 	{
 	public:
 		Application();

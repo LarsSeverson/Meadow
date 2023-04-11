@@ -5,7 +5,10 @@
 
 namespace Meadow {
 
-	class MEADOW_API Layer
+	class 
+		
+		
+		Layer
 	{
 	public:
 

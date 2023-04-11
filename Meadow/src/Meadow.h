@@ -7,7 +7,3 @@
 #include "Meadow/Layer.h"
 #include "Meadow/Log.h"
 #include "Meadow/ImGui/ImGuiLayer.h"
-
-// ------Entry Point------
-#include "Meadow/EntryPoint.h"
-// ------Entry Point------

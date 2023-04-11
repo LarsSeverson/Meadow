@@ -2,7 +2,6 @@
 #include "ImGuiLayer.h"
 
 #include "imgui.h"
-#include "Platform/OpenGL/ImGuiOpenGLRenderer.h"
 #include "GLFW/glfw3.h"
 
 

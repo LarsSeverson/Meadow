@@ -22,8 +22,10 @@ include "Meadow/vendor/imgui"
 
 project "Meadow"
     location "Meadow"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
+    cppdialect "C++20"
+    staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir    ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -73,23 +75,25 @@ project "Meadow"
 
     filter "configurations:Debug"
         defines "MD_DEBUG"
-        buildoptions "/MDd"
-        symbols "On"
+        runtime "Debug"
+        symbols "on"
 
     filter "configurations:Release"
         defines "MD_RELEASE"
-        buildoptions "/MD"
-        optimize "On"
+        runtime "Release"
+        optimize "on"
 
     filter "configurations:Dist"
         defines "MD_DIST"
-        buildoptions "/MD"
-        optimize "On"
+        runtime "Release"
+        optimize "on"
 
 project "Sandbox"
         location "Sandbox"
         kind "ConsoleApp"
         language "C++"
+        cppdialect "C++20"
+        staticruntime "on"
 
         targetdir ("bin/" .. outputdir .. "/%{prj.name}")
         objdir    ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -103,7 +107,8 @@ project "Sandbox"
         includedirs
         {
             "Meadow/src",
-            "Meadow/vendor/spdlog/include"
+            "Meadow/vendor/spdlog/include",
+            "LSAP/vendor"
         }
 
         links
@@ -123,16 +128,16 @@ project "Sandbox"
     
         filter "configurations:Debug"
             defines "MD_DEBUG"
-            buildoptions "/MDd"
-            symbols "On"
+            runtime "Debug"
+            symbols "on"
     
         filter "configurations:Release"
             defines "MD_RELEASE"
-            buildoptions "/MD"
-            optimize "On"
+            runtime "Release"
+            optimize "on"
     
         filter "configurations:Dist"
             defines "MD_DIST"
-            buildoptions "/MD"
-            optimize "On"
+            runtime "Release"
+            optimize "on"
     

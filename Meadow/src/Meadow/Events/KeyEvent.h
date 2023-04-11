@@ -3,7 +3,9 @@
 #include "Event.h"
 
 namespace Meadow {
-	class MEADOW_API KeyEvent : public Event
+	class 
+		
+		KeyEvent : public Event
 	{
 	public:
 		inline int getKeyCode() const { return mKeyCode; }
@@ -15,7 +17,7 @@ namespace Meadow {
 		int mKeyCode;
 	};
 
-	class MEADOW_API KeyPressedEvent : public KeyEvent
+	class  KeyPressedEvent : public KeyEvent
 	{
 	public :
 		KeyPressedEvent(int keyCode, int repeatCount) : KeyEvent(keyCode), mReapeatCount(repeatCount) {}
@@ -35,7 +37,7 @@ namespace Meadow {
 		int mReapeatCount;
 	};
 
-	class MEADOW_API KeyReleasedEvent : public KeyEvent
+	class  KeyReleasedEvent : public KeyEvent
 	{
 	public :
 		KeyReleasedEvent(int keyCode) : KeyEvent(keyCode) {}

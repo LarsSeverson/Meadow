@@ -16,7 +16,8 @@ namespace Meadow {
 	};
 
 	// Abstract class / interface
-	class MEADOW_API Window {
+	class Window 
+	{
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
 
