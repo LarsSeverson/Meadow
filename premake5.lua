@@ -14,7 +14,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Meadow/vendor/GLFW/include"
 IncludeDir["glad"] = "Meadow/vendor/glad/include"
-IncludeDir["ImGui"] = "Meadow/vendor/imgui"
+IncludeDir["imgui"] = "Meadow/vendor/imgui"
 
 include "Meadow/vendor/GLFW"
 include "Meadow/vendor/glad"
@@ -43,14 +43,14 @@ project "Meadow"
         "%{prj.name}/vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.glad}",
-        "%{IncludeDir.ImGui}"
+        "%{IncludeDir.imgui}"
     }
 
     links {
         "GLFW", 
         "glad",
         "opengl32.lib",
-        "ImGui"
+        "imgui"
     }
 
 
