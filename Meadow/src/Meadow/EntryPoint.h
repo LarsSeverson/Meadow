@@ -8,7 +8,7 @@ extern Meadow::Application* Meadow::CreateApplication();
 int main(int argc, char** argv) {
 	Meadow::Log::Init();
 	auto app = Meadow::CreateApplication();
-	app->Run();
+	//app->Run();
 	delete app;
 }
 

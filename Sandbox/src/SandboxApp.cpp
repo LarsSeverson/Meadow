@@ -5,7 +5,7 @@
 class ExampleLayer : public Meadow::Layer
 {
 public:
-	ExampleLayer() : Layer("Example") {}
+	ExampleLayer(const std::string& d) : Layer("Example"), hey(d) {}
 
 	void onUpdate() override
 	{
@@ -15,13 +15,15 @@ public:
 	void onEvent(Meadow::Event& event) override {
 		MD_TRACE("{0}", event);
 	}
+private:
+	std::string hey;
 };
 
 class Sandbox : public Meadow::Application
 {
 public:
 	Sandbox() {
-		pushLayer(new ExampleLayer()); 
+		pushLayer(new ExampleLayer("gey"));
 		pushOverlay(new Meadow::ImGuiLayer());
 	}
 	~Sandbox() {

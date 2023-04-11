@@ -33,8 +33,8 @@ namespace Meadow {
 	}
 
 	void Application::pushOverlay(Layer* layer) {
-		appLayerStack.pushOverlay(layer);
-		layer->onAttach();
+		//appLayerStack.pushOverlay(layer);
+		//layer->onAttach();
 	}
 
 	// Every time there is an Event this function is called 
@@ -65,7 +65,7 @@ namespace Meadow {
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : appLayerStack) {
-				layer->onUpdate();
+				//layer->onUpdate();
 			}
 
 			appWindow->onUpdate();
