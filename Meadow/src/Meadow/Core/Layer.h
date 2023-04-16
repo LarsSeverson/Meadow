@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Meadow/Core.h"
+#include "Meadow/Core/Core.h"
 #include "Meadow/Events/Event.h"
 
 namespace Meadow {

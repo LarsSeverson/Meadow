@@ -7,11 +7,12 @@
 
 #include <string>
 #include <sstream>
+#include <fstream>
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Meadow/Log.h"
+#include "Meadow/Core/Log.h"
 
 #ifdef MD_PLATFORM_WINDOWS
 #include <Windows.h>

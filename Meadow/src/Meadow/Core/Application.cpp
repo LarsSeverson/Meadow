@@ -2,7 +2,7 @@
 #include "Application.h"
 
 #include "Meadow/Events/ApplicationEvent.h"
-#include "Meadow/Log.h"
+#include "Meadow/Core/Log.h"
 
 #include <glad/glad.h>
 
@@ -61,7 +61,7 @@ namespace Meadow {
 
 	void Application::Run() {
 		while (isRunning) {
-			glClearColor(1, 1, 1, 1);
+			//glClearColor(1, 1, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : appLayerStack) {

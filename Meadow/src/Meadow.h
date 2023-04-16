@@ -3,7 +3,10 @@
 
 // For use by Meadow applications
 
-#include "Meadow/Application.h"
-#include "Meadow/Layer.h"
-#include "Meadow/Log.h"
+#include "Meadow/Core/Application.h"
+#include "Meadow/Core/Layer.h"
+#include "Meadow/Core/Log.h"
 #include "Meadow/ImGui/ImGuiLayer.h"
+
+#include "Meadow/Renderer/Buffer.h"
+#include "Meadow/Renderer/Shader.h"
