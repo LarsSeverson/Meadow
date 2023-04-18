@@ -8,6 +8,7 @@ namespace Meadow {
 	{
         // Open file
         std::ifstream stream(fileName);
+        MD_ASSERT(stream.is_open(), "Could not open file: ");
         std::string line;
         std::stringstream ss[2];
         ShaderType type = ShaderType::None;
@@ -100,6 +101,8 @@ namespace Meadow {
 
        glDetachShader(program, vertexShader);
        glDetachShader(program, fragmentShader);
+
+       this->bind();
     }
 
 	Shader::Shader(std::string& vertexSource, std::string& fragmentSource)
@@ -117,5 +120,10 @@ namespace Meadow {
     void Shader::unbind() const
     {
         glUseProgram(0);
+    }
+    void Shader::uploadUniformFloat4(const std::string& name, float x, float y, float z, float w)
+    {
+        GLint location = glGetUniformLocation(rendererID, name.c_str());
+        glUniform4f(location, x, y, z, w);
     }
 }

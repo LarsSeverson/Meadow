@@ -17,6 +17,8 @@ namespace Meadow {
 		void bind() const;
 		void unbind() const;
 
+		void uploadUniformFloat4(const std::string& name, float x, float y, float z, float w);
+
 	private:
 		struct ShaderSource { std::string vertexSource, fragmentSource; };
 		ShaderSource source;

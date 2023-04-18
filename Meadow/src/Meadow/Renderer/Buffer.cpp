@@ -24,11 +24,13 @@ namespace Meadow {
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 	//----------------------------------------------------------------------------------
-	IndexBuffer::IndexBuffer(const void* indices, uint32_t size)
+	IndexBuffer::IndexBuffer(const void* indices, uint32_t count)
+		:
+		count(count)
 	{
 		glGenBuffers(1, &rendererID);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, rendererID);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, size, indices, GL_STATIC_DRAW);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(uint32_t), indices, GL_STATIC_DRAW);
 
 	}
 	IndexBuffer::~IndexBuffer()

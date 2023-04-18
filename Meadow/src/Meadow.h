@@ -8,5 +8,7 @@
 #include "Meadow/Core/Log.h"
 #include "Meadow/ImGui/ImGuiLayer.h"
 
+#include "Meadow/Renderer/Renderer.h"
 #include "Meadow/Renderer/Buffer.h"
 #include "Meadow/Renderer/Shader.h"
+#include "Meadow/Renderer/VertexArray.h"
