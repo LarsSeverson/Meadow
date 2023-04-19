@@ -6,7 +6,7 @@ namespace Meadow {
 	class VertexBuffer 
 	{
 	public:
-		VertexBuffer(const void* vertices, uint32_t size);
+		VertexBuffer(float* vertices, uint32_t size);
 		~VertexBuffer();
 
 		void bind()	  const;
@@ -23,7 +23,7 @@ namespace Meadow {
 	class IndexBuffer 
 	{
 	public:
-		IndexBuffer(const void* indices, uint32_t count);
+		IndexBuffer(uint32_t* indices, uint32_t count);
 		~IndexBuffer();
 
 		void bind()	  const;

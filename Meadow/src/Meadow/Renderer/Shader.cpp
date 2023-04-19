@@ -4,7 +4,7 @@
 #include <glad/glad.h>
 
 namespace Meadow {
-	Shader::Shader(const std::string&& fileName)
+	Shader::Shader(const std::string& fileName)
 	{
         // Open file
         std::ifstream stream(fileName);
@@ -120,6 +120,11 @@ namespace Meadow {
     void Shader::unbind() const
     {
         glUseProgram(0);
+    }
+    void Shader::uploadUniformInt(const std::string& name, int value)
+    {
+        GLint location = glGetUniformLocation(rendererID, name.c_str());
+        glUniform1i(location, value);
     }
     void Shader::uploadUniformFloat4(const std::string& name, float x, float y, float z, float w)
     {

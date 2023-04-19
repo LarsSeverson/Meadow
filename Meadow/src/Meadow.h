@@ -12,3 +12,4 @@
 #include "Meadow/Renderer/Buffer.h"
 #include "Meadow/Renderer/Shader.h"
 #include "Meadow/Renderer/VertexArray.h"
+#include "Meadow/Renderer/Texture2D.h"

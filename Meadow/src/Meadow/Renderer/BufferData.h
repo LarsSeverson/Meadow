@@ -51,7 +51,7 @@ namespace Meadow {
 		ShaderDataType type;
 		bool normalized;
 		uint32_t size;
-		uint32_t offset;
+		size_t offset;
 	};
 
 	class BufferLayout

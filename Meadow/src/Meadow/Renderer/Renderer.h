@@ -7,6 +7,7 @@ namespace Meadow {
 	class Renderer
 	{
 	public:
+		static void init();
 		static void submit(const std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertexArray);
 	
 	private:

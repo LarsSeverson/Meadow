@@ -5,7 +5,7 @@
 
 
 namespace Meadow {
-	VertexBuffer::VertexBuffer(const void* vertices, uint32_t size)
+	VertexBuffer::VertexBuffer(float* vertices, uint32_t size)
 	{
 		glGenBuffers(1, &rendererID);
 		glBindBuffer(GL_ARRAY_BUFFER, rendererID);
@@ -24,7 +24,7 @@ namespace Meadow {
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 	//----------------------------------------------------------------------------------
-	IndexBuffer::IndexBuffer(const void* indices, uint32_t count)
+	IndexBuffer::IndexBuffer(uint32_t* indices, uint32_t count)
 		:
 		count(count)
 	{

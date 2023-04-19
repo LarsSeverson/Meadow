@@ -6,6 +6,8 @@
 #include "Meadow/Events/Event.h"
 #include "Meadow/Events/ApplicationEvent.h"
 
+#include "Meadow/Renderer/Renderer.h"
+
 namespace Meadow {
 
 	class Application

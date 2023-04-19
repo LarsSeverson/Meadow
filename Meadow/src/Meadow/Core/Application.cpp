@@ -20,6 +20,8 @@ namespace Meadow {
 
 		// Setting WindowsWindow EventCallback = the function onEvent
 		appWindow->setEventCallback(BIND_EVENT_FN(onEvent));
+
+		Renderer::init();
 	}
 
 	Application::~Application() {
@@ -61,7 +63,6 @@ namespace Meadow {
 
 	void Application::Run() {
 		while (isRunning) {
-			//glClearColor(1, 1, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : appLayerStack) {
