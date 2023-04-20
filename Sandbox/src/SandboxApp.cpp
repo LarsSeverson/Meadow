@@ -15,10 +15,10 @@ public:
 
 		// Vertex Buffer
 		float positions[] = {
-			-0.5f,  -0.5f,  0.0f,  0.0f,
-			 0.5f,  -0.5f,  1.0f,  0.0f,
-			 0.5f,   0.5f,  1.0f,  1.0f,
-			-0.5f,   0.5f,  0.0f,  1.0f
+			100.5f,  100.5f,  0.0f,  0.0f,
+			 200.5f,  100.5f,  1.0f,  0.0f,
+			 200.5f,   200.5f,  1.0f,  1.0f,
+			100.5f,   200.5f,  0.0f,  1.0f
 		};
 		std::shared_ptr<Meadow::VertexBuffer> vertexBuffer = std::make_shared<Meadow::VertexBuffer>(positions, (uint32_t)sizeof(positions));
 		vertexBuffer->setLayout({
@@ -38,7 +38,7 @@ public:
 		// Shader
 		shader = std::make_shared<Meadow::Shader>("src/assets/shaders/BasicTexture.shader");
 		// 4:3 Aspect ratio ( 2/1.5 = 1.33 or 4:3 )
-		glm::mat4 proj = glm::ortho(-2.f, 2.f, -1.5f, 1.5f, -1.f, 1.f);
+		glm::mat4 proj = glm::ortho(0.f, 1280.f, -0.f, 720.f, -1.f, 1.f);
 		shader->uploadUniformMat4("uMVP", proj);
 
 		// Texture
