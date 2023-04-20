@@ -12,7 +12,10 @@ namespace Meadow {
 
 	Application* Application::sInstance = nullptr;
 
-	Application::Application() {
+	Application::Application() 
+		:
+		guiLayer(new ImGuiLayer())
+	{
 		MD_CORE_ASSERT(!sInstance, "Application instance already exists!");
 		sInstance = this;
 
@@ -22,6 +25,7 @@ namespace Meadow {
 		appWindow->setEventCallback(BIND_EVENT_FN(onEvent));
 
 		Renderer::init();
+		pushOverlay(guiLayer);
 	}
 
 	Application::~Application() {
@@ -65,9 +69,16 @@ namespace Meadow {
 		while (isRunning) {
 			glClear(GL_COLOR_BUFFER_BIT);
 
-			for (Layer* layer : appLayerStack) {
-				layer->onUpdate();
+			if (true) {
+				for (Layer* layer : appLayerStack) {
+					layer->onUpdate();
+				}
 			}
+			guiLayer->guiBegin();
+			for (Layer* layer : appLayerStack) {
+				layer->onImGuiRender();
+			}
+			guiLayer->guiEnd();
 
 			appWindow->onUpdate();
 		}

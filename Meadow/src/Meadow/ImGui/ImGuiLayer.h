@@ -15,6 +15,9 @@ namespace Meadow {
 		void onDetach() override;
 		void onUpdate() override;
 		void onEvent(Event& event) override;
+
+		void guiBegin();
+		void guiEnd();
 	private:
 		float mTime = 0.0f;
 	};

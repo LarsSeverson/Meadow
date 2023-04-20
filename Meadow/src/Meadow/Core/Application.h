@@ -6,6 +6,8 @@
 #include "Meadow/Events/Event.h"
 #include "Meadow/Events/ApplicationEvent.h"
 
+#include "Meadow/ImGui/ImGuiLayer.h"
+
 #include "Meadow/Renderer/Renderer.h"
 
 namespace Meadow {
@@ -23,13 +25,14 @@ namespace Meadow {
 		void pushLayer(Layer* layer);
 		void pushOverlay(Layer* layer);
 
-		inline Window& getWindow() { return *appWindow; }
+		Window& getWindow() { return *appWindow; }
 
 		inline static Application& get() { return *sInstance; }
 	private:
 		bool onWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> appWindow;
+		ImGuiLayer* guiLayer;
 		static Application* sInstance;
 
 		LayerStack appLayerStack;

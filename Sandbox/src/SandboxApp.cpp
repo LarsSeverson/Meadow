@@ -5,6 +5,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include <imgui/imgui.h>
+
 class ExampleLayer : public Meadow::Layer
 {
 public:
@@ -49,6 +51,10 @@ public:
 	void onUpdate() override
 	{
 		Meadow::Renderer::submit(shader, vertexArray);
+	}
+	void onImGuiRender() override
+	{
+		ImGui::Image((void*)texture->getRendererID(), ImVec2(400.f, 400.f));
 	}
 
 	void onEvent(Meadow::Event& event) override {

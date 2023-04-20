@@ -3,8 +3,10 @@
 
 namespace Meadow {
 
-	LayerStack::LayerStack() {
-		layerInsert = layers.begin();
+	LayerStack::LayerStack() :
+	layerInsert(0)
+	{
+
 	}
 
 	LayerStack::~LayerStack() {
@@ -14,7 +16,7 @@ namespace Meadow {
 	}
 
 	void LayerStack::pushLayer(Layer* layer) {
-		layerInsert = layers.emplace(layerInsert, layer);
+		layers.emplace(layers.begin() + layerInsert++, layer);
 	}
 
 	void LayerStack::pushOverlay(Layer* overlay) {

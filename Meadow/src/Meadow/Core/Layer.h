@@ -19,6 +19,7 @@ namespace Meadow {
 		virtual void onDetach() {}
 		virtual void onUpdate() {}
 		virtual void onEvent(Event& event) {}
+		virtual void onImGuiRender() {}
 
 		inline const std::string& getDebugName() const { return mDebugName; }
 
