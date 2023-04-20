@@ -1,5 +1,7 @@
 #pragma once
 
+#include <glm/glm.hpp>
+
 namespace Meadow {
 	enum class ShaderType {
 		None = -1,
@@ -20,6 +22,8 @@ namespace Meadow {
 		void uploadUniformInt(const std::string& name, int value);
 
 		void uploadUniformFloat4(const std::string& name, float x, float y, float z, float w);
+
+		void uploadUniformMat4(const std::string& name, glm::mat4 matrix);
 
 	private:
 		struct ShaderSource { std::string vertexSource, fragmentSource; };

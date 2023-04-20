@@ -7,3 +7,6 @@
 [submodule "Meadow/vendor/imgui"]
 	path = Meadow/vendor/imgui
 	url = https://github.com/LarsSeverson/imgui
+[submodule "Meadow/vendor/glm"]
+	path = Meadow/vendor/glm
+	url = https://github.com/g-truc/glm

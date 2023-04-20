@@ -16,6 +16,7 @@ IncludeDir["GLFW"] = "Meadow/vendor/GLFW/include"
 IncludeDir["glad"] = "Meadow/vendor/glad/include"
 IncludeDir["imgui"] = "Meadow/vendor/imgui"
 IncludeDir["stb_image"] = "Meadow/vendor/stb_image"
+IncludeDir["glm"] = "Meadow/vendor/glm"
 
 include "Meadow/vendor/GLFW"
 include "Meadow/vendor/glad"
@@ -39,7 +40,9 @@ project "Meadow"
         "%{prj.name}/src/**.h",
         "%{prj.name}/src/**.cpp",
         "%{prj.name}/vendor/stb_image/**.h",
-        "%{prj.name}/vendor/stb_image/**.cpp"
+        "%{prj.name}/vendor/stb_image/**.cpp",
+        "%{prj.name}/vendor/glm/glm/**.hpp",
+        "%{prj.name}/vendor/glm/glm/**.inl"
     }
 
     includedirs
@@ -49,7 +52,8 @@ project "Meadow"
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.glad}",
         "%{IncludeDir.imgui}",
-        "%{IncludeDir.stb_image}"
+        "%{IncludeDir.stb_image}",
+        "%{IncludeDir.glm}"
     }
 
     links {
@@ -112,7 +116,8 @@ project "Sandbox"
         {
             "Meadow/src",
             "Meadow/vendor/spdlog/include",
-            "Meadow/vendor"
+            "Meadow/vendor",
+            "%{IncludeDir.glm}"
         }
 
         links

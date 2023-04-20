@@ -1,7 +1,10 @@
 #pragma once
-
 #include <Meadow.h>
 #include "Meadow/Core/EntryPoint.h"
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+
 class ExampleLayer : public Meadow::Layer
 {
 public:
@@ -17,7 +20,7 @@ public:
 			 0.5f,   0.5f,  1.0f,  1.0f,
 			-0.5f,   0.5f,  0.0f,  1.0f
 		};
-		std::shared_ptr<Meadow::VertexBuffer> vertexBuffer = std::make_shared<Meadow::VertexBuffer>(positions, sizeof(positions));
+		std::shared_ptr<Meadow::VertexBuffer> vertexBuffer = std::make_shared<Meadow::VertexBuffer>(positions, (uint32_t)sizeof(positions));
 		vertexBuffer->setLayout({
 			{ Meadow::ShaderDataType::Float2, "position" },
 			{ Meadow::ShaderDataType::Float2, "texCoord" }
@@ -34,7 +37,9 @@ public:
 
 		// Shader
 		shader = std::make_shared<Meadow::Shader>("src/assets/shaders/BasicTexture.shader");
-		shader->uploadUniformInt("uTexture", 0);
+		// 4:3 Aspect ratio ( 2/1.5 = 1.33 or 4:3 )
+		glm::mat4 proj = glm::ortho(-2.f, 2.f, -1.5f, 1.5f, -1.f, 1.f);
+		shader->uploadUniformMat4("uMVP", proj);
 
 		// Texture
 		texture = std::make_shared<Meadow::Texture2D>("src/assets/textures/snoopy.png");
