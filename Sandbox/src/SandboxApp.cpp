@@ -17,10 +17,10 @@ public:
 
 		// Vertex Buffer
 		float positions[] = {
-			100.5f,  100.5f,  0.0f,  0.0f,
-			 200.5f,  100.5f,  1.0f,  0.0f,
-			 200.5f,   200.5f,  1.0f,  1.0f,
-			100.5f,   200.5f,  0.0f,  1.0f
+			-50.5f, -50.5f, 0.0f, 0.0f,
+			 50.5f, -50.5f, 1.0f, 0.0f,
+			 50.5f,  50.5f, 1.0f, 1.0f,
+			-50.5f,  50.5f, 0.0f, 1.0f
 		};
 		std::shared_ptr<Meadow::VertexBuffer> vertexBuffer = std::make_shared<Meadow::VertexBuffer>(positions, (uint32_t)sizeof(positions));
 		vertexBuffer->setLayout({
@@ -39,22 +39,35 @@ public:
 
 		// Shader
 		shader = std::make_shared<Meadow::Shader>("src/assets/shaders/BasicTexture.shader");
-		// 4:3 Aspect ratio ( 2/1.5 = 1.33 or 4:3 )
-		glm::mat4 proj = glm::ortho(0.f, 1280.f, -0.f, 720.f, -1.f, 1.f);
-		shader->uploadUniformMat4("uMVP", proj);
 
 		// Texture
 		texture = std::make_shared<Meadow::Texture2D>("src/assets/textures/snoopy.png");
 		texture->bind();
 	}
 
+
 	void onUpdate() override
 	{
-		Meadow::Renderer::submit(shader, vertexArray);
+		{
+			proj = glm::ortho(0.f, 1280.f, -0.f, 720.f, -1.f, 1.f);
+			view = glm::translate(glm::mat4(1.f), glm::vec3(0, 0, 0));
+			model = glm::translate(glm::mat4(1.f), glm::vec3(100, 100, 0));
+			mvp = proj * view * model;
+			shader->uploadUniformMat4("uMVP", mvp);
+			Meadow::Renderer::submit(shader, vertexArray);
+		}
+		{
+			proj = glm::ortho(0.f, 1280.f, -0.f, 720.f, -1.f, 1.f);
+			view = glm::translate(glm::mat4(1.f), glm::vec3(0, 0, 0));
+			model = glm::translate(glm::mat4(1.f), glm::vec3(400, 100, 0));
+			mvp = proj * view * model;
+			shader->uploadUniformMat4("uMVP", mvp);
+			Meadow::Renderer::submit(shader, vertexArray);
+		}
 	}
 	void onImGuiRender() override
 	{
-		ImGui::Image((void*)texture->getRendererID(), ImVec2(400.f, 400.f));
+		//ImGui::Image((void*)texture->getRendererID(), ImVec2(400.f, 400.f));
 	}
 
 	void onEvent(Meadow::Event& event) override {
@@ -65,6 +78,8 @@ private:
 	std::shared_ptr<Meadow::VertexArray> vertexArray;
 	std::shared_ptr<Meadow::Shader> shader;
 	std::shared_ptr<Meadow::Texture2D> texture;
+
+	glm::mat4 proj, view, model, mvp;
 };
 
 class Sandbox : public Meadow::Application
